@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html {
+      scroll-behavior: smooth; /* 페이지 스크롤 시 부드럽게 움직이는 CSS */
+    }
+    body > div:nth-child(1) {
+      width : 200px;
+      height: 2000px;
+      background-color: aqua;
+    }
+    body > div:nth-child(2) {
+      width : 200px;
+      height: 2000px;
+      background-color: bisque;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    A
+    <input type="text" placeholder="Here">
+  </div>
+  <div>
+    B
+    <input type="text" placeholder="Here">
+  </div>
+  <script>
+    const A = document.getElementsByTagName('div')[0];
+    const B = document.getElementsByTagName('div')[1];
+
+    const firstB = document.createElement('input');
+    firstB.setAttribute('type','button');
+    firstB.setAttribute('value','click');
+    firstB.addEventListener('click',GoB);
+    A.appendChild(firstB);
+    
+    const secondB = document.createElement('input');
+    secondB.setAttribute('type','button');
+    secondB.setAttribute('value','click');
+    secondB.addEventListener('click',GoA);
+    B.appendChild(secondB);
+    
+    
+    
+    
+    
+    
+    function GoA() {
+      A.children[0].focus() // 해당 input으로 이동되며, 활성화 시킴
+    }
+    function GoB() {
+      B.children[0].focus() // 해당 input으로 이동되며, 활성화 시킴
+    }
+  </script>
+</body>
+</html>
